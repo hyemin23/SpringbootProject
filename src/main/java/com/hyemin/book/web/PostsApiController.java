@@ -8,11 +8,14 @@ import com.hyemin.book.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.lang.reflect.Proxy;
+
 @RequiredArgsConstructor
 @RestController
 public class PostsApiController {
 
     private final PostsService postsService;
+
 
     @PostMapping("/api/v1/posts")
     public Long save(@RequestBody PostsSaveRequestDto postsSaveRequestDto) {
