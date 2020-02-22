@@ -1,7 +1,7 @@
 package com.hyemin.book.service.posts;
 
-import com.hyemin.book.domain.posts.PostsRepository;
 import com.hyemin.book.domain.posts.Posts;
+import com.hyemin.book.domain.posts.PostsRepository;
 import com.hyemin.book.web.dto.PostsListResponseDto;
 import com.hyemin.book.web.dto.PostsResponseDto;
 import com.hyemin.book.web.dto.PostsSaveRequestDto;
