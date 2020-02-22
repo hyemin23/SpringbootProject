@@ -1,7 +1,7 @@
 package com.hyemin.book.web;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.hyemin.book.domain.posts.JpaRepository;
+import com.hyemin.book.domain.posts.PostsRepository;
 import com.hyemin.book.domain.posts.Posts;
 import com.hyemin.book.web.dto.PostsSaveRequestDto;
 import com.hyemin.book.web.dto.PostsUpdateRequestDto;
@@ -40,7 +40,7 @@ public class PostsApiControllerTest {
     private TestRestTemplate restTemplate;
 
     @Autowired
-    private JpaRepository postsRepository;
+    private PostsRepository postsRepository;
 
     @Autowired
     private WebApplicationContext context;

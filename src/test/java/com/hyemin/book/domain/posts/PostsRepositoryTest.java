@@ -1,6 +1,5 @@
 package com.hyemin.book.domain.posts;
 
-import javafx.geometry.Pos;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,15 +15,15 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class JpaRepositoryTest {
+public class PostsRepositoryTest {
 
     @Autowired
-    JpaRepository jpaRepository;
+    PostsRepository postsRepository;
 
     @After
     public void cleanup()
     {
-        jpaRepository.deleteAll();
+        postsRepository.deleteAll();
     }
 
     @Test
@@ -33,13 +32,13 @@ public class JpaRepositoryTest {
         String title = "테스트 게시글";
         String content="테스트 본문";
 
-        jpaRepository.save(Posts.builder()
+        postsRepository.save(Posts.builder()
         .title(title)
         .content(content)
         .author("aaa@aaa")
         .build());
 
-        List<Posts> postsList = jpaRepository.findAll();
+        List<Posts> postsList = postsRepository.findAll();
 
         //then
         Posts posts = postsList.get(0);
@@ -53,14 +52,14 @@ public class JpaRepositoryTest {
     {
         //given
         LocalDateTime now = LocalDateTime.of(2019,6,4,0,0,0);
-        jpaRepository.save(Posts.builder()
+        postsRepository.save(Posts.builder()
         .title("title")
         .content("content")
         .author("author")
         .build());
 
         //when
-        List<Posts> postsList = jpaRepository.findAll();
+        List<Posts> postsList = postsRepository.findAll();
 
         //then
         Posts posts = postsList.get(0);
